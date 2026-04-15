@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Triangle</title>
+</head>
+<body>
+    <script>
+        // repeated number triangle
+//         let rows = 5;
+// for(let i = 1; i <= rows; i++){
+//     let pattern = "";
+//     for(let j = 1; j <= i; j++){
+//         pattern += j + " ";
+//     }
+//     console.log(pattern);
+// }
+
+
+// continous number triangle
+// let rows = 4;
+// let num = 1;
+// for(let i = 1; i <= rows; i++){
+//     let pattern = "";
+//     // spaces
+//     for(let j = 1; j <= rows - i; j++){
+//         pattern += "  ";
+//     }
+//     // numbers
+//     for(let k = 1; k <= i; k++){
+//         if(num <= 10){
+//             pattern += num + " ";
+//             num++;
+//         }
+//     }
+//     console.log(pattern);
+// }
+
+
+// Palindrome Triangle 
+let rows = 5;
+for(let i = 1; i <= rows; i++){
+    let pattern = "";
+    // increasing numbers
+    for(let j = 1; j <= i; j++){
+        pattern += j + " ";
+    }
+    // decreasing numbers
+    for(let k = i-1; k >= 1; k--){
+        pattern += k + " ";
+    }
+    console.log(pattern);
+}
+    </script>
+</body>
+</html>

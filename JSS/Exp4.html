@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Result Calculator</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:linear-gradient(135deg,#c3f45b83,#5ed0b2);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+width:350px;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+input{
+width:90%;
+padding:10px;
+margin:6px;
+border-radius:6px;
+border:1px solid gray;
+}
+
+button{
+padding:10px 15px;
+border:none;
+border-radius:8px;
+background:rgba(0, 128, 26, 0.726);
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#0088ff;
+}
+
+#result{
+margin-top:15px;
+font-weight:bold;
+}
+
+#yname {
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #eb2d40;
+  text-shadow: 0 0 5px #d52b37, 0 0 10px #e1e8ea;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Result Calculator</h2>
+
+<input type="text" id="name" placeholder="Student Name">
+<input type="number" id="subjects" placeholder="Number of Subjects">
+
+<button onclick="enterMarks()">Enter Marks</button>
+<button onclick="calculateResult()">Calculate Result</button>
+
+<p id="yname">Prepared by: Avni Parashar</p>
+<p id="yname">Roll Number: 2503215400048</p>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+let marks=[];
+let studentCount=0;
+
+function enterMarks(){
+
+marks=[];
+
+let subjects=document.getElementById("subjects").value;
+
+for(let i=1;i<=subjects;i++){
+
+let m=prompt("Enter marks for subject "+i);
+marks.push(Number(m));
+}
+}
+function calculateResult(){
+
+if(studentCount>=3){
+alert("You can only enter 3 students");
+return;
+}
+
+let total=0;
+
+for(let m of marks){
+total+=m;
+}
+
+let avg=total/marks.length;
+
+let grade;
+
+if(avg>=90) grade="A";
+else if(avg>=75) grade="B";
+else if(avg>=60) grade="C";
+else if(avg>=40) grade="D";
+else grade="F";
+
+let result = avg>=40 ? "PASS" : "FAIL";
+
+document.getElementById("result").innerHTML=
+
+"Total Marks: "+total+"<br>"+
+"Average Marks: "+avg.toFixed(2)+"<br>"+
+"Grade: "+grade+"<br>"+
+"Result: "+result;
+
+studentCount++;
+
+if(studentCount<3){
+
+alert("Enter next student details");
+
+document.getElementById("name").value="";
+document.getElementById("subjects").value="";
+}else{
+alert("All 3 students data entered");
+}
+}
+</script>
+</body>
+</html>

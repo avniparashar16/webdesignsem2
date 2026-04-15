@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UseState</title>
+</head>
+<body>
+    <script>
+        import React, { useState } from 'react';
+        function app() {
+            const [count, setCount] = useState(0);
+            return (
+                <div>
+                    <p>You clicked {count} times</p>
+                    <button onClick={() => setCount(count + 1)}>
+                        Click me
+                    </button>
+                </div>
+            );
+        }
+    </script>
+</body>
+</html>

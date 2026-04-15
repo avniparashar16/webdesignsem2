@@ -1,0 +1,120 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background-color:#121212;
+    color:white;
+    margin:0;
+}
+
+/* Header */
+header{
+    background:black;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    color:orange;
+    font-weight:bold;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+}
+
+nav ul li a:hover{
+    color:orange;
+}
+
+/* Hero Section */
+.hero{
+    height:80vh;
+    background:url("https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/05/14/1846377-983576-982532-981864-battlegrounds-mobile-india.jpg");
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.hero-content{
+    background:rgba(0,0,0,0.6);
+    padding: 30px 40px;
+    border-radius:10px;
+    text-align:center;
+    
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.btn{
+    padding:10px 20px;
+    background:orange;
+    color:black;
+    text-decoration:none;
+    border-radius:5px;
+    display:inline-block;
+    font-weight:bold;
+}
+
+/* Page Content */
+.content{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.content h2{
+    color:orange;
+    margin-bottom:20px;
+}
+
+/* Footer */
+footer{
+    background:black;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav ul{
+        flex-direction:column;
+        margin-top:10px;
+    }
+
+    nav ul li{
+        margin:20px 0;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+}
